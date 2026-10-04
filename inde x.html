@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UNBL0CKEDZ0NE - Unblocked Games with NO ADS</title>
+  <meta name="description" content="Play free unblocked games at UNBL0CKEDZ0NE. Explore a huge collection of browser games with no ads.">
+  <link rel="canonical" href="https://ubz.lol/">
+
+  <meta property="og:title" content="UNBL0CKEDZ0NE - Unblocked Games with NO ADS">
+  <meta property="og:description" content="Play unblocked browser games with no ads at UNBL0CKEDZ0NE.">
+  <meta property="og:url" content="https://ubz.lol/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ubz.lol/ubz-banner.png">
+  <meta property="og:image:alt" content="UNBL0CKEDZ0NE (UBZ) banner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UNBL0CKEDZ0NE - Unblocked Games with NO ADS">
+  <meta name="twitter:description" content="Play unblocked browser games with no ads at UNBL0CKEDZ0NE.">
+  <meta name="twitter:image" content="https://ubz.lol/ubz-banner.png">
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #hk {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: transparent;
+    }
+
+    #hk:hover {
+      background: rgba(0, 0, 0, 0.01);
+    }
+  </style>
+</head>
+<body>
+  <div id="hk"></div>
+  <script>
+    (function () {
+      var hk = document.getElementById("hk");
+      hk.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        window.focus();
+      });
+
+      var mirrors = [
+        "https://quantil.jsdelivr.net", 
+        "https://gcore.jsdelivr.net", 
+        "https://originfastly.jsdelivr.net", 
+        "https://fastly.jsdelivr.net", 
+        "https://testingcf.jsdelivr.net", 
+        "https://jsdelivr.b-cdn.net", 
+        "https://jsd.onmicrosoft.cn", 
+        "https://cdn.jsdmirror.com", 
+        "https://cdn.statically.io", 
+        "https://cdn.staticdelivr.com", 
+        "https://cdn.jsdelivr.net"
+      ];
+      var paths = ["/gh/", "s0n-1m-", "cr1n3/", "sc13nc3/", "assets/", "index.html"];
+
+      function tryMirror(i) {
+        if (i >= mirrors.length) {
+          var errorHtml = `
+            <!DOCTYPE html>
+            <html>
+                <p>oops I guess it didn't load. Try again.</p>
+            </html>
+          `;
+          document.open();
+          document.write(errorHtml);
+          document.close();
+          return;
+        }
+        
+        fetch(mirrors[i] + paths.join("")).then(function (r) {
+          if (!r.ok) throw 0;
+          return r.text();
+        }).then(function (html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }).catch(function () { 
+          tryMirror(i + 1); 
+        });
+      }
+
+      tryMirror(0);
+    })();
+  </script>
+</body>
+</html>
